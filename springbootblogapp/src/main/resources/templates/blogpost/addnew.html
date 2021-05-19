@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <title>Ibtxhis' Blog Post</title>
+</head>
+<body class="bg-gradient">
+    
+    <div class="container center-div pad-top">
+        <h3>Use the form to submit a blog post:</h3><br>
+        <div class="row">
+            <div class="col-md-12">
+                <form action="#" th:action="@{/blogpost/result}" th:object="${blogPost}" method="POST">
+                    <label for="title">Title: &nbsp; &nbsp; </label>
+                    <input type="text" name="title" id="title" th:field="*{title}"><br>
+
+                    <label for="author">Author: <p> </p></label>
+                    <input type="text" name="author" id="author" th:field="*{author}"><br>
+
+                    <label for="entry">Blog Entry: </label><br>
+                    <textarea name="entry" id="entry" th:field="*{entry}" cols="30" rows="10"></textarea>
+
+                    <br>
+                    <a href="#"><button class="btn btn-primary">Submit</button></a>
+                </form>
+            </div>
+        </div>
+    </div>     
+
+
+
+
+
+
+    <script src="../../webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../../webjars/popper.js/2.0.2/umd/popper.min.js"></script>
+    <script src="../../webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

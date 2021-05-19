@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Ibtxhis' Blog Post</title>
+</head>
+<body class="bg-gradient">
+    
+    <div class="container center-div pad-bottom">
+        <div class="row">
+            <div class="col-md-12 index-title">
+                <h1>Welcome to my Blog Site!</h1><br>
+                <h3>Check out our blogs.</h3><br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="card-columns">
+                    <div th:each="p : ${posts}">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title" th:text="${p.title}"></h5>
+                            </div>
+                            <div class="card-body">
+                                <p th:text="${p.author}"></p>
+                                <p th:text="${p.entry}"></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-info"><a href="#" th:href="@{/blogpost/edit/{id}(id=${p.id})}">Edit</a></button>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal"><a href="#">Delete</a></button>
+                            </div>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                Are you sure you want to delete this post?
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                <a href="#" th:href="@{/blogpost/delete/{id}(id=${p.id})}"><button type="button" class="btn btn-danger">Yes, Delete</button></a>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <br><button class="btn btn-primary"><a href="blogpost/addnew">Add a new post</a></button>
+            </div>
+        </div>
+    </div>
+                
+            
+    
+    
+
+
+
+    <script src="webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="webjars/popper.js/2.0.2/umd/popper.min.js"></script>
+    <script src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

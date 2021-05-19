@@ -1,0 +1,39 @@
+html, body {
+    width: auto;
+    height: 100vh;
+    padding: 0 0;
+    margin: 0 0;
+}
+
+.row {
+    padding: 0 0;
+    margin: 0 0;
+}
+
+.index-title {
+    padding-top: 2em;
+}
+
+.btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.center-div {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.pad-bottom {
+    padding-bottom: 2em;
+}
+.pad-top {
+    padding-top: 2em;
+}
+
+.bg-gradient {
+    background: #E0EAFC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
